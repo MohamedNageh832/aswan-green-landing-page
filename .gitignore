@@ -1,1 +1,4 @@
 *.scss
+*.map
+base.css
+components.css
