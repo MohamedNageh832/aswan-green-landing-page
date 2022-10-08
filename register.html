@@ -7,12 +7,16 @@
     <meta name="description" content="تواصل مع خدمة عملاء اسوان جرين" />
     <title>اسوان جرين - تواصل معنا</title>
 
-    <link rel="stylesheet" href="./stylesheets/index.css" />
+    <link rel="stylesheet" href="./static/stylesheets/index.css" />
   </head>
   <body>
     <header class="navbar">
       <a href="index.html">
-        <img class="navbar__logo" src="./assets/images/logo.png" alt="logo" />
+        <img
+          class="navbar__logo"
+          src="./static/assets/images/logo.png"
+          alt="logo"
+        />
       </a>
       <button class="nav-toggler">
         <svg
@@ -52,7 +56,7 @@
         <form class="form form--step1">
           <img
             class="form__img"
-            src="./assets/images/logo.png"
+            src="./static/assets/images/logo.png"
             alt="لوجو اسوان جرين"
           />
 
@@ -70,7 +74,7 @@
           </div>
           <div class="form__group">
             <label class="form__label">الرقم القومي</label>
-            <input name="nationalId" type="number" max="14" required />
+            <input name="nationalId" type="number" required />
             <span class="form__validation-msg"
               >الرقم القومي يجب ان يكون 14 رقم</span
             >
@@ -78,14 +82,16 @@
           <div class="form__group">
             <label class="form__label">كلمة المرور</label>
             <input name="password" type="password" required />
-            <span class="form__validation-msg">هذا الحقل مطلوب</span>
+            <span class="form__validation-msg"
+              >كلمة المرور يجب الا تقل عن 8 حرف و رقم</span
+            >
           </div>
           <button class="btn btn--green" type="submit">التالي</button>
         </form>
         <form class="form form--step2 hidden">
           <img
             class="form__img"
-            src="./assets/images/logo.png"
+            src="./static/assets/images/logo.png"
             alt="لوجو اسوان جرين"
           />
 
@@ -152,7 +158,7 @@
       </section>
     </main>
 
-    <script defer src="./scripts/global.js"></script>
-    <script defer src="./scripts/register.js"></script>
+    <script defer src="./static/scripts/global.js"></script>
+    <script defer src="./static/scripts/register.js"></script>
   </body>
 </html>

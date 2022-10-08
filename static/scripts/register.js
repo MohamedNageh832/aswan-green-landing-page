@@ -20,11 +20,8 @@ clientName.addEventListener("blur", () => {
   else clientName.removeAttribute("data-invalid");
 });
 
-phone.addEventListener("keydown", () => {
-  if (phone.value.length >= 11) {
-    phone.value = phone.value.substring(0, 10);
-  }
-});
+phone.addEventListener("keyup", () => limitBy(phone, 11));
+phone.addEventListener("keydown", () => limitBy(phone, 11));
 
 phone.addEventListener("blur", () => {
   const isValidNumber =
@@ -34,11 +31,8 @@ phone.addEventListener("blur", () => {
   else phone.removeAttribute("data-invalid");
 });
 
-nationalId.addEventListener("keydown", () => {
-  if (nationalId.value.length >= 14) {
-    nationalId.value = nationalId.value.substring(0, 13);
-  }
-});
+nationalId.addEventListener("keyup", () => limitBy(nationalId, 14));
+nationalId.addEventListener("keydown", () => limitBy(nationalId, 14));
 
 nationalId.addEventListener("blur", () => {
   const isValidId = nationalId.value.length === 14;
@@ -57,7 +51,12 @@ password.addEventListener("blur", () => {
 formStep1.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const isValidName = clientName.value.split(" ").length === 3;
+  const submitBtn = formStep1.querySelector(`[type="submit"]`);
+
+  submitBtn.classList.add("btn--loading");
+  submitBtn.textContent = "جار التحميل...";
+
+  const isValidName = clientName.value.split(" ").length >= 3;
   const isValidNumber =
     phone.value.startsWith("01") && phone.value.length === 11;
   const isValidId = nationalId.value.length === 14;
@@ -85,8 +84,6 @@ formStep1.addEventListener("submit", async (e) => {
   };
 
   clientId = await postStepOne(data);
-
-  console.log(clientId);
 
   formStep1.classList.add("hidden");
   formStep2.classList.remove("hidden");
@@ -117,6 +114,11 @@ addressDetails.addEventListener("blur", () => {
 
 formStep2.addEventListener("submit", async (e) => {
   e.preventDefault();
+  const submitBtn = formStep2.querySelector(`[type="submit"]`);
+
+  submitBtn.classList.add("btn--loading");
+  submitBtn.textContent = "جار التحميل...";
+
   const isValidArea = area.value !== "0";
   const isValidAddressDetails = addressDetails.value.length > 5;
 
@@ -198,5 +200,11 @@ async function postStepTwo(data) {
     return res;
   } catch (error) {
     return { error };
+  }
+}
+
+function limitBy(el, maxChar) {
+  if (el.value.length > maxChar) {
+    el.value = el.value.substring(0, maxChar);
   }
 }
