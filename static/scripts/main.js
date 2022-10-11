@@ -74,7 +74,6 @@ const animationOptions = {
 const animationObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     entry.target.classList.toggle("show", entry.isIntersecting);
-    console.log(entry.target, entry.isIntersecting);
   });
 }, animationOptions);
 
