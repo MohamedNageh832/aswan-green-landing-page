@@ -149,7 +149,7 @@ formStep2.addEventListener("submit", async (e) => {
 
 async function getRegions() {
   const res = await fetch(
-    "https://aswangreen.pythonanywhere.com/account/getAreas?format=json"
+    "https://www.aswangreen.com/account/getAreas?format=json"
   );
   const data = await res.json();
 
@@ -165,7 +165,7 @@ async function getRegions() {
 async function postStepOne(data) {
   try {
     const res = await fetch(
-      "https://aswangreen.pythonanywhere.com/account/registerFirstStep",
+      "https://www.aswangreen.com/account/registerFirstStep",
       {
         method: "POST",
         headers: {
@@ -186,7 +186,7 @@ async function postStepOne(data) {
 async function postStepTwo(data) {
   try {
     const res = await fetch(
-      "https://aswangreen.pythonanywhere.com/account/registerFinal",
+      "https://www.aswangreen.com/account/registerFinal",
       {
         method: "POST",
         headers: {
