@@ -32,13 +32,20 @@
       href="./static/stylesheets/vendors/splide-core.min.css"
     />
     <link rel="stylesheet" href="./static/stylesheets/index.css" />
+    <link
+      rel="preload"
+      fetchpriority="high"
+      as="image"
+      href="./static/assets/images/hero-image-1.webp"
+      type="image/webp"
+    />
   </head>
   <body>
     <header class="navbar">
       <a href="index.html">
         <img
           class="navbar__logo"
-          src="./static/assets/images/logo.png"
+          src="./static/assets/images/logo.webp"
           alt="logo"
         />
       </a>
@@ -90,7 +97,7 @@
           <li class="splide__slide">
             <section class="hero-carousel__item">
               <div class="overlay"></div>
-              <section class="hero-carousel__caption">
+              <section class="hero-carousel__caption animate">
                 <img
                   class="logo"
                   src="./static/assets/images/logo.svg"
@@ -106,12 +113,15 @@
             </section>
           </li>
           <li class="splide__slide">
-            <section class="hero-carousel__item">
+            <section
+              class="hero-carousel__item"
+              data-background="./static/assets/images/hero-image-2.webp"
+            >
               <div class="overlay"></div>
-              <section class="hero-carousel__caption">
+              <section class="hero-carousel__caption animate">
                 <img
                   class="logo"
-                  src="./static/assets/images/logo.svg"
+                  data-src="./static/assets/images/logo.svg"
                   alt="لوجو اسوان جرين"
                 />
                 <p>جمع المخلفات بطريقة امنة و اعادة تدويرها</p>
@@ -122,12 +132,15 @@
             </section>
           </li>
           <li class="splide__slide">
-            <section class="hero-carousel__item">
+            <section
+              class="hero-carousel__item"
+              data-background="./static/assets/images/hero-image-3.webp"
+            >
               <div class="overlay"></div>
-              <section class="hero-carousel__caption">
+              <section class="hero-carousel__caption animate">
                 <img
                   class="logo"
-                  src="./static/assets/images/logo.svg"
+                  data-src="./static/assets/images/logo.svg"
                   alt="لوجو اسوان جرين"
                 />
                 <p>حملات التشجير و النظافة العامة للشوارع في المحافظة</p>
@@ -141,7 +154,7 @@
       </div>
     </main>
 
-    <section class="section section--grey company-owner">
+    <section class="section section--grey company-owner animate">
       <span>احدي شركات</span>
       <a class="association" href="https://www.es4id.com/">
         <img
@@ -154,8 +167,8 @@
     </section>
 
     <section class="section">
-      <div class="container section__grid align-start">
-        <section>
+      <div class="container section__grid align-start animate">
+        <section class="about-us__text">
           <h3 class="section-title">من نحن؟</h3>
           <p class="paragraph-section">
             اسوان جرين هو احد مشروعات الجمعية المصرية للتنمية المتكاملة يهدف الي
@@ -171,7 +184,7 @@
         </section>
         <img
           class="about-us__img"
-          src="./static/assets/images/about-us.webp"
+          data-src="./static/assets/images/about-us.webp"
           alt="صورة لعمال اسوان جرين"
         />
       </div>
@@ -184,11 +197,11 @@
           <p>نقوم بتقديم مجموعة واسعة من الخدمات</p>
         </section>
         <section class="our-services mt-3">
-          <div class="card">
+          <div class="card animate">
             <div class="card__img-holder">
               <img
                 class="card__img"
-                src="./static/assets/images/cleaning-services.webp"
+                data-src="./static/assets/images/cleaning-services.webp"
                 alt="خدمات النظافة"
               />
               <span class="card__img-caption">خدمات النظافة</span>
@@ -203,11 +216,11 @@
               >
             </section>
           </div>
-          <div class="card">
+          <div class="card animate">
             <div class="card__img-holder">
               <img
                 class="card__img"
-                src="./static/assets/images/house-collecting-service.webp"
+                data-src="./static/assets/images/house-collecting-service.webp"
                 alt="خدمات النظافة"
               />
               <span class="card__img-caption">خدمة الجمع المنزلي</span>
@@ -219,11 +232,11 @@
               >
             </section>
           </div>
-          <div class="card">
+          <div class="card animate">
             <div class="card__img-holder">
               <img
                 class="card__img"
-                src="./static/assets/images/disinfecting-services.webp"
+                data-src="./static/assets/images/disinfecting-services.webp"
                 alt="خدمات التعقيم و مكافحة الحشرات"
               />
               <span class="card__img-caption"
@@ -239,11 +252,11 @@
               >
             </section>
           </div>
-          <div class="card">
+          <div class="card animate">
             <div class="card__img-holder">
               <img
                 class="card__img"
-                src="./static/assets/images/maintenance-services.webp"
+                data-src="./static/assets/images/maintenance-services.webp"
                 alt="خدمات الصيانة"
               />
               <span class="card__img-caption">خدمات الصيانة</span>
@@ -262,13 +275,13 @@
     </section>
 
     <section class="section">
-      <div class="container section__grid align-start">
+      <div class="container section__grid align-start animate">
         <img
           class="our-vision__image"
-          src="./static/assets/images/our-vision.webp"
+          data-src="./static/assets/images/our-vision.webp"
           alt="رؤيتنا"
         />
-        <section>
+        <section class="our-vision__text">
           <h3 class="section-title">رؤيتنا</h3>
           <p class="paragraph-section">
             تقديم بيئة نظيفة وتوفير العديد من فرص العمل لشباب اسوان و تقديم حل
@@ -296,7 +309,7 @@
       </div>
     </section>
 
-    <section class="section our-activities">
+    <section class="section our-activities animate">
       <div class="container text-center">
         <section>
           <h3 class="section-title">انشطتنا</h3>
@@ -312,7 +325,7 @@
                 <section class="our-activities__item">
                   <div class="overlay"></div>
                   <img
-                    src="./static/assets/images/activity-1.webp"
+                    data-src="./static/assets/images/activity-1.webp"
                     alt="صورة من الندوة"
                   />
                   <p class="our-activities__caption">ندوات</p>
@@ -323,7 +336,7 @@
                 <section class="our-activities__item">
                   <div class="overlay"></div>
                   <img
-                    src="./static/assets/images/activity-2.webp"
+                    data-src="./static/assets/images/activity-2.webp"
                     alt="حملات التوعية"
                   />
                   <p class="our-activities__caption">حملات التوعية</p>
@@ -333,7 +346,7 @@
                 <section class="our-activities__item">
                   <div class="overlay"></div>
                   <img
-                    src="./static/assets/images/activity-3.webp"
+                    data-src="./static/assets/images/activity-3.webp"
                     alt="حملات الرش و التعقيم"
                   />
                   <p class="our-activities__caption">حملات الرش و التعقيم</p>
@@ -343,7 +356,7 @@
                 <section class="our-activities__item">
                   <div class="overlay"></div>
                   <img
-                    src="./static/assets/images/activity-4.webp"
+                    data-src="./static/assets/images/activity-4.webp"
                     alt="صورة لعمال اسوان جرين"
                   />
                   <p class="our-activities__caption">حملات التشجير</p>
@@ -362,10 +375,10 @@
           <p>كن دائما معنا</p>
         </section>
         <section class="our-news">
-          <section class="our-news__item">
+          <section class="our-news__item animate">
             <img
               class="our-news__img"
-              src="./static/assets/images/news-1.webp"
+              data-src="./static/assets/images/news-1.webp"
               alt="تنظيف و تعقيم دور العبادة"
             />
             <section class="our-news__body">
@@ -380,10 +393,10 @@
               </p>
             </section>
           </section>
-          <section class="our-news__item">
+          <section class="our-news__item animate">
             <img
               class="our-news__img"
-              src="./static/assets/images/news-2.webp"
+              data-src="./static/assets/images/news-2.webp"
               alt=""
             />
             <section class="our-news__body">
@@ -396,10 +409,10 @@
               </p>
             </section>
           </section>
-          <section class="our-news__item">
+          <section class="our-news__item animate">
             <img
               class="our-news__img"
-              src="./static/assets/images/news-3.webp"
+              data-src="./static/assets/images/news-3.webp"
               alt="تشجير طريق السادات"
             />
             <section class="our-news__body">
@@ -414,10 +427,10 @@
             </section>
           </section>
 
-          <section class="our-news__item">
+          <section class="our-news__item animate">
             <img
               class="our-news__img"
-              src="./static/assets/images/news-4.webp"
+              data-src="./static/assets/images/news-4.webp"
               alt=""
             />
             <section class="our-news__body">
@@ -438,7 +451,7 @@
 
     <footer class="section footer">
       <div class="footer__section container">
-        <section class="footer__column text-center">
+        <section class="footer__column text-center footer__logo animate">
           <div>
             <img
               class="logo"
@@ -459,7 +472,7 @@
           </a>
         </section>
 
-        <section class="footer__column footer__sitemap">
+        <section class="footer__column footer__sitemap animate">
           <h4 class="footer__title">روابط مهمة</h4>
           <a class="sitemap__item" href="./index.html">الرئيسية</a>
           <a class="sitemap__item" href="./about-us.html">من نحن؟</a>
@@ -468,7 +481,7 @@
           <a class="sitemap__item" href="./login">تسجيل الدخول</a>
         </section>
 
-        <section class="footer__column">
+        <section class="footer__column footer__contact-us animate">
           <h4 class="footer__title">تواصل معنا</h4>
 
           <p>66 طريق السادات امام الاكاديمية البحرية اعلي توكيل سيارات رينو</p>

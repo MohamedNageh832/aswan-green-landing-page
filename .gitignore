@@ -1,6 +1,6 @@
 *.scss
 *.map
 *.prepros
-.vscode
+**/.vscode
 base.css
 components.css
